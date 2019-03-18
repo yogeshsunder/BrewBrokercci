@@ -1,0 +1,43 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/circleCiTest
+    
+    steps:
+      - checkout
+
+      - run: echo $JAVA
+      - run: mvn dependency:go-offline
+
+      - run:
+          name: Install latest version of ChromeBrowser Sample
+          command: |
+            sudo apt-get install libxss1 libappindicator1 libindicator7
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt install ./google-chrome*.deb
+            sudo apt-get install -f
+            google-chrome --version
+      - run:
+          name: Install latest version of ChromeDriver Sample
+          command: |
+            sudo wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip  
+            sudo unzip chromedriver_linux64.zip
+            sudo rm chromedriver_linux64.zip
+            sudo mv chromedriver /usr/bin/
+            sudo chmod 777 /usr/bin/chromedriver
+            sudo apt-get install libxi6 libgconf-2-4
+            sudo apt-get -y install xvfb gtk2-engines-pixbuf
+            sudo apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+            sudo apt-get install xvfb
+            sudo apt-get -y install imagemagick x11-apps
+            pwd
+      # run tests!
+      - run: mvn test
