@@ -13,7 +13,7 @@ public class OpenBrowser {
 	{
 		System.setProperty("webdriver.chrome.driver", "/home/ucreate-16/Eclipse-Projects_Ubuntu/BrewBrokercircleci/Drivers/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://brewbroker-react.herokuapp.com/");
+		driver.get("https://brewbroker.com/");
 	}
 
 }
