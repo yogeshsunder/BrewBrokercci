@@ -11,7 +11,7 @@ public class OpenBrowser {
 	@Test
 	public void openBrowser()
 	{
-		System.setProperty("webdriver.chrome.driver", "/home/ucreate-16/Eclipse-Projects_Ubuntu/BrewBrokercircleci/Drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://brewbroker.com/");
 	}
