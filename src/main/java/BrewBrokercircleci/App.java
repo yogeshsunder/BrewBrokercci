@@ -1,4 +1,4 @@
-package BrewBrokercircleci.BrewBrokercircleci;
+package BrewBrokercircleci;
 
 /**
  * Hello world!

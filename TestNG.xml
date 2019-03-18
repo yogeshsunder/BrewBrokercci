@@ -4,7 +4,7 @@
 
   <test name="OpenBrowser">
     <classes>
-     <class name="BrewBrokercircleci/BrewBrokercircleci.OpenBrowser"/>
+     <class name="BrewBrokercircleci.OpenBrowser"/>
     </classes>
    </test>
   
