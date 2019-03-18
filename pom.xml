@@ -10,8 +10,8 @@
   <name>BrewBrokercircleci</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<properties>
+    <suiteXmlFile>/home/ucreate-16/eclipse-workspace/BrewBrokercircleci/TestNG.xml</suiteXmlFile> 
   </properties>
 
   <dependencies>
